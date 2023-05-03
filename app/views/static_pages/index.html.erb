@@ -1,0 +1,11 @@
+<%= form_with url: static_pages_path, method: 'get' do |f| %>
+  <%= f.label :id %>
+  <%= f.text_field :id %>
+  <%= f.submit "Display photos" %>
+<% end %>
+
+<% unless @photos.nil?%>
+  <% @photos.each do |p| %>
+    <%= image_tag p %>
+  <% end %>
+<% end %>
